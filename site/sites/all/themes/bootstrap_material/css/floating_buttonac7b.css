@@ -1,0 +1,161 @@
+@import url("../../../../../../daneden.github.io/animate.css/animate.min.css");
+/*
+:root {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  -webkit-transition: 400ms all;
+  transition: 400ms all;
+  background-color: #263238;
+}
+body.opened {
+  background-color: #E53935;
+}
+*/
+.papersheet {
+  position: fixed;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 50%;
+  min-width: 50rem;
+  max-height: 50%;
+  min-height: 20rem;
+}
+.papersheet:hover {
+  cursor: pointer;
+}
+.papersheet.opened {
+  -webkit-transition: all 900ms;
+  transition: all 900ms;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+.papersheet__trigger {
+  z-index: 1;
+  display: inline-block;
+  padding: 2rem;
+  border-radius: 50%;
+  position: fixed;
+  background-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
+}
+.opened .papersheet__trigger {
+  /*background-color: #ECEFF1;
+  top: 10%;*/
+}
+.papersheet__trigger:active:before {
+  background-color: #d5d5d5;
+}
+.papersheet__trigger:before {
+  content: "";
+  background-color: #ECEFF1;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  bottom: 50%;
+  right: 50%;
+  width: 6rem;
+  height: 6rem;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+  -webkit-transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.opened .papersheet__trigger:before {
+  width: 3000px;
+  height: 3000px;
+  -webkit-transition: all 2.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 2.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.papersheet__trigger-icon {
+  fill: #37474F;
+  vertical-align: bottom;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition-delay: 50ms;
+          transition-delay: 50ms;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.opened .papersheet__trigger-icon {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.papersheet__face-item {
+  border-radius: 50%;
+  margin: 0 1.5rem;
+  z-index: 1;
+  height: 6rem;
+  width: 6rem;
+  display: none;
+  overflow: hidden;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+}
+.papersheet__face-item:nth-child(2) {
+  -webkit-animation-delay: 50;
+          animation-delay: 50;
+}
+.papersheet__face-item:nth-child(3) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+.papersheet__face-item:nth-child(4) {
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+.papersheet__face-item img {
+  max-width: 100%;
+}
+.opened .papersheet__face-item {
+  -webkit-transform: translateX(60%);
+          transform: translateX(60%);
+  display: block;
+}
